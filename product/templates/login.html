@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="coantainer">
+  <div class="row">
+    <div class="col-md-4 mx-auto">
+      <div class="main">
+        <div class="register">
+           <h2>Login Here</h2>
+           <form action="" id="register" method="post">
+             {% csrf_token %}
+             
+               
+               {% if error %}
+                  <div class="alert alert-danger">
+                    {{error}}
+                  </div>
+               {% endif %}
+               <label>E-mail</label>
+               <br>
+               <input type="email"  name="email" id="name" required placeholder="enter your email" >
+               <br><br>
+               <label>Password :</label>
+               <br>
+               <input type="password" name="password"  id="name" placeholder="enter password">
+                 <br><br>   
+               <input type="submit" value="login" name="submit" id="submit">
+           </form>
+        </div>
+      </div>  
+    </div>    
+  </div>
+</div>
+{% endblock body %}
+    
